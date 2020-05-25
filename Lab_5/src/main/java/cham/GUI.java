@@ -6,6 +6,7 @@ import java.awt.*;
 public class GUI extends JFrame {
 
     JImage image;
+    int howMuch = 0;
 
     public GUI(Dimension dim){
         setSize(dim);
@@ -27,9 +28,12 @@ public class GUI extends JFrame {
         image.drawLineLeftBottom();
         sierpLeft(iteration);
         image.drawLineLeftTop();
+
+        System.out.println(howMuch);
     }
 
     private void sierpTop(int iteration){
+        howMuch++;
         if(iteration > 1){
             sierpTop(iteration - 1);
             image.drawLineRightTop();
@@ -44,6 +48,7 @@ public class GUI extends JFrame {
     }
 
     private void sierpRight(int iteration){
+        howMuch++;
         if(iteration > 1){
             sierpRight(iteration - 1);
             image.drawLineRightBottom();
@@ -58,6 +63,7 @@ public class GUI extends JFrame {
     }
 
     private void sierpBottom(int iteration){
+        howMuch++;
         if(iteration > 1){
             sierpBottom(iteration - 1);
             image.drawLineLeftBottom();
@@ -72,6 +78,7 @@ public class GUI extends JFrame {
     }
 
     private void sierpLeft(int iteration){
+        howMuch++;
         if(iteration > 1){
             sierpLeft(iteration - 1);
             image.drawLineLeftTop();
