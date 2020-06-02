@@ -1,38 +1,63 @@
 package cham;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
 public class App {
-    public static void main( String[] args ) {
+
+    /**
+     * Матрица смежности заполняется по принципу:
+     * Слева находится узел из которого идут пути, сверху находятся узлы, куда идут пути
+     *
+     * Составляется таблица смежности без названия вершин.
+     * Необходимо указать вес перехода между вершинами в таблице через запятую,
+     * если перехода нет указывать ноль
+     */
+    public static void main( String[] args ) throws IOException {
+        File file = new File("test.txt");
+        if (!file.isFile()) {
+            System.out.println("Ошибка при открытии файла");
+            return;
+        }
+
+        FileInputStream fin = new FileInputStream(file);
+        String buf = "";
+        int i = -1;
+
+        while ((i = fin.read()) != -1)
+            buf += (char) i;
+
+        if (buf.length() == 0)
+            return;
+
+        String[] commands = buf.split("\n");
+        Node[] nodeArray = new Node[commands.length];
+
+        // Создание объектов узлов
+        for (i = 0; i < nodeArray.length; i++)
+            nodeArray[i] = new Node("" + i);
+
+
+        // Перебор команд в строках матрицы смежности
+        for (i = 0; i < commands.length; i++) {
+            String[] com = commands[i].split(",");
+            for (int j = 0; j < com.length; j++)
+                if (!com[j].equals("0"))
+                    nodeArray[i].addDestination(nodeArray[j], Integer.parseInt(com[j]));
+        }
+
         Graph graph = new Graph();
 
-        Node nodeA = new Node("A");
-        Node nodeB = new Node("B");
-        Node nodeC = new Node("C");
-        Node nodeD = new Node("D");
-        Node nodeE = new Node("E");
-        Node nodeF = new Node("F");
-
-        nodeA.addDestination(nodeB, 10);
-        nodeA.addDestination(nodeC, 15);
-        nodeB.addDestination(nodeD, 12);
-        nodeB.addDestination(nodeF, 15);
-        nodeC.addDestination(nodeE, 10);
-        nodeD.addDestination(nodeE, 2);
-        nodeD.addDestination(nodeF, 1);
-        nodeF.addDestination(nodeE, 5);
-
-        graph.addNode(nodeA);
-        graph.addNode(nodeB);
-        graph.addNode(nodeC);
-        graph.addNode(nodeD);
-        graph.addNode(nodeE);
-        graph.addNode(nodeF);
+        for (Node node : nodeArray)
+            graph.addNode(node);
 
         // На вход подается графф с начальной точкой
-        Dijkstra.calculateShortestPathFromSource(graph, nodeA);
+        Dijkstra.calculateShortestPathFromSource(graph, nodeArray[0]);
 
-        for(Node node: graph.getNodes()){
+        for (Node node : graph.getNodes()) {
             System.out.print("Путь до точки проходит через: ");
-            for(Node n: node.getShortestPath())
+            for (Node n : node.getShortestPath())
                 System.out.print(n.getName() + "->");
 
             System.out.println(node.getName());
