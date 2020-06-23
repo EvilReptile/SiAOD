@@ -2,6 +2,9 @@ package cham;
 
 import java.util.Scanner;
 
+/**
+ * https://codeforces.com/problemset/problem/550/A
+ */
 public class App {
     public static void main( String[] args ) {
         Scanner scn  = new Scanner(System.in);

@@ -2,6 +2,9 @@ package cham;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * https://codeforces.com/problemset/problem/455/A
+ */
 public class App {
 
     static HashMap<String, Integer> seq = new HashMap<>();
