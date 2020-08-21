@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dfd2f535-8a2f-4470-b271-41793300abbb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Task_1/.idea/Task_1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_1_Kiryaev/Task_1_Kiryaev.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_1_Kiryaev/src/main/java/cham/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_2/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Task_2_Kiryaev/src/main/java/cham/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_1/src/main/java/cham/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_1/src/main/java/cham/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_2/src/main/java/cham/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2/src/main/java/cham/App.java" afterDir="false" />
-    </list>
+    <list default="true" id="dfd2f535-8a2f-4470-b271-41793300abbb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,5 +39,15 @@
       <updated>1592870339153</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="774" y="300" width="424" height="520" key="FileChooserDialogImpl" timestamp="1593020031632">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="774" y="300" width="424" height="520" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1593020031632" />
+    <state x="305" y="257" width="1372" height="599" key="new project wizard" timestamp="1593020040316">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="305" y="257" width="1372" height="599" key="new project wizard/72.27.1848.1053@72.27.1848.1053" timestamp="1593020040316" />
   </component>
 </project>
